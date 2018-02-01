@@ -2,7 +2,7 @@
 
 ```
 git clone ...
-submodule init
+git submodule init
 
 git checkout master
 git submodule update --recursive --remote
