@@ -59,6 +59,7 @@ git push
 git checkout master
 git submodule foreach "git checkout master"
 git merge release-0.0.1
+// submodule versioning might be too much effort, because commit sha as a reference is enough.
 git submodule foreach "git merge release-0.0.1"
 git push --recurse-submodules=on-demand
 
