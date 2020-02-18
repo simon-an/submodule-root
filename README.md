@@ -21,6 +21,24 @@ git submodule status
 git submodule foreach "git branch -v"
 ```
 
+### new commit on the submodule:
+
+```bash
+echo this is a minor change >> README.md
+git add README.md
+git commit -m "change in submodule"
+git push
+```
+
+### update the parent project branch
+
+```bash
+echo this is a minor change >> README.md
+git add README.md
+git commit -m "change in submodule"
+git push
+```
+
 
 ### To remove a submodule you need to:
 
