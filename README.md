@@ -21,6 +21,12 @@ git submodule status
 git submodule foreach "git branch -v"
 ```
 
+### make sure the branch of the submodule is correct:
+
+``` bash
+git submodule foreach "git checkout <parentbranch>"
+```
+
 ### new commit on the submodule:
 
 ```bash
