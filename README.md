@@ -24,7 +24,7 @@ git submodule foreach "git branch -v"
 ### make sure the branch of the submodule is correct:
 
 ``` bash
-git submodule foreach "git checkout <parentbranch>"
+git submodule foreach "git checkout <parent-branch>"
 ```
 
 ### new commit on the submodule:
@@ -39,10 +39,8 @@ git push
 ### update the parent project branch
 
 ```bash
-echo this is a minor change >> README.md
-git add README.md
-git commit -m "change in submodule"
-git push
+git add submodule-1
+git commit -m "update submodule to include latest changes"
 ```
 
 
