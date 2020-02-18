@@ -39,11 +39,43 @@ git push
 ### update the parent project branch
 
 ```bash
-git add submodule-1
+git add submodule-2
 git commit -m "update submodule to include latest changes"
 git push
 ```
 
+### create release:
+
+```bash
+git checkout -b release-0.0.1
+git submodule foreach "git checkout -b release-0.0.1"
+git push -u origin release-0.0.1
+git submodule foreach "git push -u origin release-0.0.1"
+// bugfix commit to submodule
+git add submodule-2
+git commit -m "update submodule to release candidate"
+git push
+
+git checkout master
+git submodule foreach "git checkout master"
+git merge release-0.0.1
+git submodule foreach "git merge release-0.0.1"
+git push --recurse-submodules=on-demand
+
+ git tag 0.0.1 -sam "this is a bugfix release bla bla"
+ git submodule foreach git tag 0.0.1 -sam "this is a bugfix release bla bla"
+ git submodule foreach git push origin 0.0.1
+ git push origin 0.0.1 --recurse-submodules=on-demand
+
+// remove release branches:
+
+git push origin --delete release-0.0.1
+git submodule foreach git push origin --delete release-0.0.1
+git branch -d release-0.0.1
+git submodule foreach git branch -d release-0.0.1
+
+
+```
 
 ### To remove a submodule you need to:
 
