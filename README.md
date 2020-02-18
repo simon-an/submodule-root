@@ -41,6 +41,7 @@ git push
 ```bash
 git add submodule-1
 git commit -m "update submodule to include latest changes"
+git push
 ```
 
 
