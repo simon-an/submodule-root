@@ -68,13 +68,26 @@ git push --recurse-submodules=on-demand
  git submodule foreach git push origin 0.0.1
  git push origin 0.0.1 --recurse-submodules=on-demand
 
+```
+
+### merge back to develop
+
+```bash
+git submodule foreach git checkout develop
+// merge tag or release branch
+git submodule foreach git merge 0.0.1
+git checkout develop
+git add submodule-2
+git merge 0.0.1
+git commit -m "merge submodule release 0.0.1 to develop"
+git push
+
 // remove release branches:
 
 git push origin --delete release-0.0.1
 git submodule foreach git push origin --delete release-0.0.1
 git branch -d release-0.0.1
 git submodule foreach git branch -d release-0.0.1
-
 
 ```
 
